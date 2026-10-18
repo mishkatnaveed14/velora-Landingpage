@@ -1,16 +1,16 @@
 :root {
-    --rose-950: #392b36;
-    --rose-900: #593c4e;
-    --rose-800: #755266;
-    --rose-700: #98647d;
-    --rose-500: #c17f9b;
-    --rose-300: #dfb2c2;
-    --rose-100: #f2e4e9;
-    --rose-50: #fcf7f8;
-    --sage: #718c7d;
-    --ink: #493b45;
-    --muted: #7d7279;
-    --line: #eee4e9;
+    --rose-950: #344431;
+    --rose-900: #557945;
+    --rose-800: #5d9253;
+    --rose-700: #557945;
+    --rose-500: #f1a344;
+    --rose-300: #ffcb3d;
+    --rose-100: #fff3cf;
+    --rose-50: #fcf9ee;
+    --sage: #5d9253;
+    --ink: #3d4538;
+    --muted: #73766b;
+    --line: #e9e7d8;
     --white: #fff;
 }
 

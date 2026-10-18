@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
 :root {
     font-family: 'DM Sans', sans-serif;
-    color: #453843;
+    color: #2d392d;
     background: #fff;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 500;
     --body: 'DM Sans', sans-serif;
-    --heading: 'Cormorant Garamond', serif;
+    --heading: 'Manrope', sans-serif;
 }
 
 * {
@@ -28,8 +28,8 @@ body {
     min-width: 320px;
     margin: 0;
     font-family: var(--body);
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 button,
@@ -42,7 +42,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #bf6588;
+    outline: 2px solid #557945;
     outline-offset: 3px;
 }
 
@@ -52,7 +52,7 @@ img {
 
 ::selection {
     color: #fff;
-    background: #98647d;
+    background: #557945;
 }
 
 @media (max-width: 760px) {

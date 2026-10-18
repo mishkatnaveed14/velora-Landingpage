@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     color: #453843;
     background: #fff;
     font-synthesis: none;
@@ -10,8 +10,8 @@
     -moz-osx-font-smoothing: grayscale;
     font-optical-sizing: auto;
     font-weight: 400;
-    --body: 'Roboto', sans-serif;
-    --heading: 'Raleway', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --heading: 'Cormorant Garamond', serif;
 }
 
 * {
@@ -52,7 +52,7 @@ img {
 
 ::selection {
     color: #fff;
-    background: #a64f73;
+    background: #98647d;
 }
 
 @media (max-width: 760px) {

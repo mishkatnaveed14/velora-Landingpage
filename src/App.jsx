@@ -85,7 +85,12 @@ function App() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="#hero" onClick={closeMenu} aria-label="Velora home">
+          <a
+            className="brand"
+            href="#hero"
+            onClick={closeMenu}
+            aria-label="Velora home"
+          >
             <span className="brand-mark">v</span>
             <span>velora</span>
           </a>
@@ -101,7 +106,9 @@ function App() {
             <span />
           </button>
           <button
-            className={menuOpen ? "drawer-backdrop is-visible" : "drawer-backdrop"}
+            className={
+              menuOpen ? "drawer-backdrop is-visible" : "drawer-backdrop"
+            }
             type="button"
             aria-label="Close navigation"
             aria-hidden={!menuOpen}
@@ -112,12 +119,24 @@ function App() {
             className={menuOpen ? "main-nav nav-open" : "main-nav"}
             aria-label="Main navigation"
           >
-            <a href="#hero" onClick={closeMenu}>Home</a>
-            <a href="#about" onClick={closeMenu}>About</a>
-            <a href="#features" onClick={closeMenu}>Features</a>
-            <a href="#pricing" onClick={closeMenu}>Pricing</a>
-            <a href="#gallery" onClick={closeMenu}>Gallery</a>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
+            <a href="#hero" onClick={closeMenu}>
+              Home
+            </a>
+            <a href="#about" onClick={closeMenu}>
+              About
+            </a>
+            <a href="#features" onClick={closeMenu}>
+              Features
+            </a>
+            <a href="#pricing" onClick={closeMenu}>
+              Pricing
+            </a>
+            <a href="#gallery" onClick={closeMenu}>
+              Gallery
+            </a>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
+            </a>
           </nav>
         </div>
       </header>
@@ -138,10 +157,7 @@ function App() {
           onSelectTestimonial={setActiveTestimonial}
         />
         <PricingSection />
-        <FaqSection
-          activeFaq={activeFaq}
-          onToggleFaq={setActiveFaq}
-        />
+        <FaqSection activeFaq={activeFaq} onToggleFaq={setActiveFaq} />
         <ContactSection
           formMessage={formMessage}
           onSubmit={submitContactForm}

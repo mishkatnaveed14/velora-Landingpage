@@ -1472,6 +1472,10 @@
         transition: transform 200ms ease, opacity 200ms ease;
     }
 
+    .menu-toggle.menu-open span {
+        background: #593c4e;
+    }
+
     .menu-toggle.menu-open span:first-child {
         transform: translateY(7px) rotate(45deg);
     }

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const asset = "/assets/softland";
@@ -300,6 +300,49 @@ function App() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    document.body.classList.toggle("drawer-visible", menuOpen);
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.classList.remove("drawer-visible");
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    document.documentElement.classList.add("motion-ready");
+    const revealTargets = document.querySelectorAll(
+      "main > section:not(.hero) > .container, .section-heading, .showcase-card, .feature-row, .pricing-card, .footer-main",
+    );
+
+    if (!("IntersectionObserver" in window)) {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.12 },
+    );
+
+    revealTargets.forEach((target) => {
+      target.classList.add("scroll-reveal");
+      observer.observe(target);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <header className="site-header">
@@ -314,7 +357,7 @@ function App() {
             <span>velora</span>
           </a>
           <button
-            className="menu-toggle"
+            className={menuOpen ? "menu-toggle menu-open" : "menu-toggle"}
             type="button"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
@@ -324,6 +367,14 @@ function App() {
             <span />
             <span />
           </button>
+          <button
+            className={menuOpen ? "drawer-backdrop is-visible" : "drawer-backdrop"}
+            type="button"
+            aria-label="Close navigation"
+            aria-hidden={!menuOpen}
+            tabIndex={menuOpen ? 0 : -1}
+            onClick={closeMenu}
+          />
           <nav
             className={menuOpen ? "main-nav nav-open" : "main-nav"}
             aria-label="Main navigation"
@@ -802,42 +853,11 @@ function App() {
               <span>velora</span>
             </a>
             <p>A little space to pause, reset, and bloom into yourself.</p>
-            <div className="social-links">
-              <a href="#contact" aria-label="Instagram">
-                ig
-              </a>
-              <a href="#contact" aria-label="Pinterest">
-                p
-              </a>
-              <a href="#contact" aria-label="TikTok">
-                ♪
-              </a>
-            </div>
-          </div>
-          <div className="footer-links">
-            <h3>Explore</h3>
-            <a href="#about">Our story</a>
-            <a href="#features">Features</a>
-            <a href="#gallery">Gallery</a>
-          </div>
-          <div className="footer-links">
-            <h3>Make yourself at home</h3>
-            <a href="#pricing">Plans</a>
-            <a href="#faq">FAQs</a>
-            <a href="#contact">Get in touch</a>
-          </div>
-          <div className="footer-note">
-            <span>TAKE A BREATH</span>
-            <p>
-              There is no rush.
-              <br />
-              You are right where you need to be.
-            </p>
           </div>
         </div>
         <div className="container footer-bottom">
           <span>
-            © Copyright <strong>Velora</strong>. All Rights Reserved
+            © Copyright <strong>Velora</strong> All Rights Reserved
           </span>
           <span>
             Designed by{" "}

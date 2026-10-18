@@ -368,7 +368,9 @@ function App() {
             <span />
           </button>
           <button
-            className={menuOpen ? "drawer-backdrop is-visible" : "drawer-backdrop"}
+            className={
+              menuOpen ? "drawer-backdrop is-visible" : "drawer-backdrop"
+            }
             type="button"
             aria-label="Close navigation"
             aria-hidden={!menuOpen}

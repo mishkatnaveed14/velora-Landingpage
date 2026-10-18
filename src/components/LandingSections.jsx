@@ -640,7 +640,9 @@ export function FaqSection({ activeFaq, onToggleFaq }) {
                   {activeFaq === index ? "−" : "+"}
                 </span>
               </button>
-              {activeFaq === index && <p>{answer}</p>}
+              <div className="faq-answer" aria-hidden={activeFaq !== index}>
+                <p>{answer}</p>
+              </div>
             </article>
           ))}
         </div>
